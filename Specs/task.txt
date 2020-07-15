@@ -1,0 +1,37 @@
+Organization:
+--------------
+- Estimate the time of each task
+- Assign tasks
+- MCD
+- Directories & files (together)
+- MySQL Database
+- Configure the project on Git
+
+Programming:
+---------------
+- Home
+	* research
+	* categories
+	* latest films
+- catalog
+	* pagination
+	* results (mini-movie sheets)
+	* sort(s)
+	* add to playlist
+- movie
+	* show the data
+- add / edit movie
+	* form (HTML)
+	* processing / validation / data management
+- add / modify category
+	* form (HTML)
+	* processing / validation / data management
+- playlist
+	* create a playlist
+	* edit/change playlist
+- template
+	* menu (header)
+	* footer
+- generic functions
+	* connection to the DB
+	* SQL queries
