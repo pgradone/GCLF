@@ -12,7 +12,7 @@
 <body>
 
     <?php
-require_once 'homepage.html';
+require_once 'homepage.php';
 $errors = array();
 
 if (isset($_POST['submit'])) {
@@ -34,7 +34,6 @@ if (isset($_POST['submit'])) {
 
     if (count($errors) == 0) {
         //Connect to the DB
-        require_once 'database.php';
         $conn = mysqli_connect("localhost", "root", "", "gclf");
 
         $selectQuery = 'SELECT *
