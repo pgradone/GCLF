@@ -12,7 +12,7 @@
 <body>
 
     <?php
-require_once 'homepage.php';
+require_once 'nav.php';
 $errors = array();
 
 if (isset($_POST['submit'])) {
