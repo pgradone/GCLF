@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>HOME</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="topnav">
+    <nav class="topnav">
         <a class="active" href="homepage.php">home</a>
         <a href="#categories">Categories</a>
         <a href="#addmovie">Add Movie</a>
@@ -23,9 +23,9 @@
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
-    </div>
+    </nav>
     <div style="padding-left:16px">
-        <h2>Landing (index.html)</h2>
+        <h2></h2>
     </div>
 
 </body>

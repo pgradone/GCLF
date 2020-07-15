@@ -11,7 +11,8 @@
     <?php
 require_once 'homepage.php';
 $mail = '';
-$username = '';
+$firstname = '';
+$lastname = '';
 
 $errors = array();
 
@@ -19,7 +20,8 @@ $errors = array();
 if (isset($_POST['submit'])) {
     $mail = $_POST['mail'];
     $password = $_POST['password'];
-    $username = $_POST['username'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
     // First, I clean the email
     $sanitizeMail = filter_var($mail, FILTER_SANITIZE_EMAIL);
     // Verify the format
@@ -30,8 +32,11 @@ if (isset($_POST['submit'])) {
         $errors['mail'] = 'You must enter a valid email address.';
     }
 
-    if (empty($username)) {
-        $errors['username'] = 'Username is mandatory.';
+    if (empty($firstname)) {
+        $errors['firstname'] = 'firstname is mandatory.';
+    }
+    if (empty($lastname)) {
+        $errors['lastname'] = 'lastname is mandatory.';
     }
 
     if (empty($password)) {
@@ -61,8 +66,8 @@ if (isset($_POST['submit'])) {
             $securePassword = password_hash($password, PASSWORD_DEFAULT);
 
             // Prepare & Execute query
-            $query = "INSERT INTO users(username, mail, password)
-        VALUES('$username', '$sanitizeMail', '$securePassword')";
+            $query = "INSERT INTO users(firstname ,lastname, mail, password)
+        VALUES('$firstname','$lastname', '$sanitizeMail', '$securePassword')";
 
             // !!!!! Check the query : var_dump($query);
 
@@ -92,7 +97,8 @@ foreach ($errors as $key => $error) {
     <h1>Register to the website</h1>
     <br>
     <form action="" method="post">
-        <input type="text" name="username" placeholder="username" value="<?=$username;?>"><br>
+        <input type="text" name="firstname" placeholder="firstname" value="<?=$firstname;?>"><br>
+        <input type="text" name="lastname" placeholder="lastname" value="<?=$lastname;?>"><br>
         <input type="text" name="mail" placeholder="email" value="<?=$mail;?>"><br>
         <input type="password" placeholder="password" name="password"><br>
         <input type="submit" name="submit" value="Register">
