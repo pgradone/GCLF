@@ -92,9 +92,9 @@ foreach ($errors as $key => $error) {
     <h1>Register to the website</h1>
     <br>
     <form action="" method="post">
-        <input type="text" name="username" value="<?=$username;?>"><br>
-        <input type="text" name="mail" value="<?=$mail;?>"><br>
-        <input type="password" name="password"><br>
+        <input type="text" name="username" placeholder="username" value="<?=$username;?>"><br>
+        <input type="text" name="mail" placeholder="email" value="<?=$mail;?>"><br>
+        <input type="password" placeholder="password" name="password"><br>
         <input type="submit" name="submit" value="Register">
     </form>
 </body>
