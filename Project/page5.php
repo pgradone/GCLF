@@ -8,7 +8,10 @@
 </head>
 
 <body>
-    <?php require_once 'index.html'; ?>
+    <?php require_once 'index.html';?>
+    <div>
+
+    </div>
 </body>
 
 </html>
