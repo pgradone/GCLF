@@ -45,7 +45,7 @@ require_once 'nav.php';
         <section class="categories">
             <article>
                 <div id="card">
-                    <h3>film title</h3>
+
                 </div>
                 <h3>
                     <a href="">title</a>
@@ -54,7 +54,7 @@ require_once 'nav.php';
 
             <article>
                 <div id="card">
-                    <h3>film title2</h3>
+
                 </div>
                 <h3>
                     <a href="">title</a>
@@ -63,7 +63,7 @@ require_once 'nav.php';
 
             <article>
                 <div id="card">
-                    <h3>film title3</h3>
+
                 </div>
                 <h3>
                     <a href="">title</a>
@@ -71,7 +71,7 @@ require_once 'nav.php';
             </article>
             <article>
                 <div id="card">
-                    <h3>film title3</h3>
+
                 </div>
                 <h3>
                     <a href="">title</a>
