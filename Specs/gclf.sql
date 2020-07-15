@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 15, 2020 at 11:13 AM
--- Server version: 10.4.10-MariaDB
+-- Generation Time: Jul 15, 2020 at 12:46 PM
+-- Server version: 5.7.30-log
 -- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -41,12 +41,12 @@ CREATE TABLE IF NOT EXISTS `act` (
 --
 
 INSERT INTO `act` (`movie_id`, `actor_id`) VALUES
-(4, 2),
-(5, 2),
-(10, 2),
 (2, 3),
 (3, 4),
-(3, 5);
+(3, 5),
+(4, 2),
+(5, 2),
+(10, 2);
 
 -- --------------------------------------------------------
 
@@ -129,7 +129,8 @@ CREATE TABLE IF NOT EXISTS `movies` (
   `poster` varchar(1000) DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL COMMENT 'category id of movie',
   PRIMARY KEY (`movie_id`),
-  UNIQUE KEY `UK_title` (`movie_id`)
+  UNIQUE KEY `UK_title` (`movie_id`),
+  KEY `FK_movies_category` (`category_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 --
@@ -183,7 +184,8 @@ INSERT INTO `playlists` (`playlist_id`, `playlist_name`, `creation_date`, `user_
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL COMMENT 'email of user',
   `password` varchar(60) NOT NULL,
   PRIMARY KEY (`user_id`),
@@ -194,10 +196,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `email`, `password`) VALUES
-(1, 'banana', 'banana@tree.com', 'bananainthebox'),
-(3, 'pgradone', 'pgradone@gmail.com', '$2y$10$sQYaVRU4a/yisiJY4I0AceXM5jUVejPZtZ7c1J9aWvRMTaETnYMSu'),
-(4, 'avy', 'avy@gmail.com', '$2y$10$9GEJLZRdL4AWMbKj4H3F2e88jN.SB3arVIBNs5399llQXjiNVcw2q');
+INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `email`, `password`) VALUES
+(1, 'banana', 'big', 'banana@tree.com', 'bananainthebox'),
+(3, 'pgradone', 'potito', 'pgradone@gmail.com', '$2y$10$sQYaVRU4a/yisiJY4I0AceXM5jUVejPZtZ7c1J9aWvRMTaETnYMSu'),
+(4, 'avy', 'idk', 'avy@gmail.com', '$2y$10$9GEJLZRdL4AWMbKj4H3F2e88jN.SB3arVIBNs5399llQXjiNVcw2q');
 
 --
 -- Constraints for dumped tables
