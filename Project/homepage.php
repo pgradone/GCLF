@@ -14,19 +14,17 @@
         <a class="active" href="homepage.php">home</a>
         <a href="#categories">Categories</a>
         <a href="#addmovie">Add Movie</a>
-        <a href="register.php">Register</a>
-        <a href="login.php">Login</a>
 
         <div class="search-container">
-            <form action="/action_page.php">
+            <a href="register.php">Register</a>
+            <a href="login.php">Login</a>
+            <!-- <form action="/action_page.php">
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
+            </form> -->
         </div>
     </nav>
-    <div style="padding-left:16px">
-        <h2></h2>
-    </div>
+
 
 </body>
 
