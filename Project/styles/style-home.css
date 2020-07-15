@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    border: none;
+    margin: none;
+}
+main {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin: none;
+    background-color: azure;
+    text-align: center;
+}
+
+.categories {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem;
+}
+#search {
+    width: 25rem;
+}
+#card {
+    background-color: red;
+    padding: 7rem;
+}
