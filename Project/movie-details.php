@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <?php require_once 'nav.html';?>
+    <?php require_once 'nav.php';?>
 </body>
 
 </html>
