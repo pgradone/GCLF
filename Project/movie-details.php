@@ -34,6 +34,15 @@
                     echo '<p><strong>Released : </strong>' . $movie['year_released'] . '</p>';
                     echo '<p><strong>Caregory : </strong>' . $movie['gender'] . '</p>';
                     echo '<hr>';
+                    // get actors for each movie
+                    $sql_query = 'SELECT * FROM act INNER JOIN actors a ON a.actor_id = act.actor_id WHERE act.movie_id = ' . $movie['movie_id'];
+                    $result_query = mysqli_query($db_handle, $sql_query);
+                    if ($result_query) {
+                        $actors = mysqli_fetch_all($result_query, MYSQLI_ASSOC);
+                        foreach ($actors as $actor) {
+
+                        }
+                    }
                 }
             } else {
                 echo 'wrong query : ' . $sql_query . '<br>';
