@@ -26,11 +26,11 @@
 
         // Check inputs
         if (!$sanitizeMail) {
-            $errors['email'] = 'You must enter a valid email address.';
+            $errors['email'] = "<p style=' color:red; text-align:center';>You must enter a valid email.";
         }
 
         if (empty($password)) {
-            $errors['password'] = 'Password is mandatory.';
+            $errors['password'] = "<p style=' color:red; text-align:center';>Password is mandatory.";
         }
 
         if (count($errors) == 0) {
@@ -51,10 +51,10 @@
                     $_SESSION['email'] = $sanitizeMail;
                     $_SESSION['username'] = $user['username'];
                 } else {
-                    $errors['wrongpassword'] = 'Wrong password.';
+                    $errors['wrongpassword'] = "<p style=' color:red; text-align:center';>Wrong password. Please review.";
                 }
             } else {
-                $errors['mailnotfound'] = 'User with this address email doesnt exists.';
+                $errors['mailnotfound'] = "<p style=' color:red; text-align:center';>This email doesn\'t exist. Please retry.";
             }
         }
     }
@@ -62,11 +62,11 @@
     //var_dump($errors);
     ?>
 
-    <h2>Login to the website</h2>
-    <form action="" method="post">
-        <input type="mail" name="email" placeholder="Email"><br>
-        <input type="password" name="password" placeholder="Password"><br>
-        <input type="submit" name="submit" value="LOGIN">
+    <h2 style="text-align: center;">Please login:</h2><br>
+    <form style="text-align: center;" action="" method="post">
+        <input type="mail" name="email" placeholder="Email"><br><br>
+        <input type="password" name="password" placeholder="Password"><br><br>
+        <input type="submit" name="submit" value="Enter">
     </form>
 </body>
 

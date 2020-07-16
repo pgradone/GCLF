@@ -79,7 +79,7 @@
                     echo "<p style='color:white; background-color:grey; text-align:center';>Successfully registered. You can now login.<br>";
                     header('Refresh: 5; url="login.php');
                 } else {
-                    echo "<style='color:red; text-align:center'>Something went wrong... Try again.";
+                    echo "<p style='color:red; text-align:center'>Something went wrong... Try again.";
                 }
 
                 // Close connection
@@ -93,7 +93,7 @@
     ?>
 
 
-    <h1 style="text-align:center"> Register to the website</h1> <br>
+    <h2 style="text-align:center"> Register on the website</h2> <br>
     <form class="register" action="" method="post" style="text-align: center">
         <input type="text" name="firstname" placeholder="First Name" value="<?= $firstname; ?>"><br><br>
         <input type="text" name="lastname" placeholder="Last Name" value="<?= $lastname; ?>"><br><br>
