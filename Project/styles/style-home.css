@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 body {
-    border: none;
     margin: none;
 }
 main {
@@ -18,21 +17,27 @@ main {
     justify-content: space-evenly;
     margin: 2rem;
 }
-#search {
-    width: 25rem;
-}
+
 #card {
     background-color: red;
     padding: 7rem;
 }
 #formContainer {
-    
-    padding: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5rem 0px ;
 }
-
 .form {
-    padding: 5rem;
-    border: 1px solid green;
-    background-color: yellow;
-    
+    width: 50%;
+    height: 100px;
+    border: 3px solid green;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.button {
+    padding: 1rem;
+    float: inline-end;
+    border: 3px solid blue;
 }

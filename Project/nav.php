@@ -19,10 +19,7 @@
         <div class="search-container">
             <a href="register.php">Register</a>
             <a href="login.php">Login</a>
-            <!-- <form action="/action_page.php">
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form> -->
+
         </div>
     </nav>
 

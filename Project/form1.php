@@ -11,9 +11,9 @@
 <body>
     <?php require_once 'nav.php';?>
     <section id="formContainer">
-        <input class="form">
-            <h3>formulaire</h3>
-        </input>
+        <input type="text" class="form">
+        <input type="submit" class="button" value="Validate">
+
     </section>
 </body>
 
