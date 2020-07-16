@@ -11,8 +11,8 @@
     <?php require_once 'nav.php'; ?>
     <?php
     // Make sur I get an ID
+    echo key($_GET) . $_GET[key($_GET)] . '<br>';
     if (isset($_GET['id'])) {
-
         // Make sure it is a number I get
         $movieID = (int) $_GET['id'];
 
@@ -24,19 +24,21 @@
 
             if ($db_found) {
 
+                $criteria=  isset($_GET) ? 'WHERE ' . $_GET : '';
                 $sql_query = 'SELECT m.*, c.gender FROM movies m 
-                    LEFT JOIN categories c ON c.category_id = m.category_id 
-                    WHERE m.movie_id = ' . $movieID;
-
+                    LEFT JOIN categories c ON c.category_id = m.category_id '
+                    . $criteria;
                 $result_query = mysqli_query($db_handle, $sql_query);
-                $movie = mysqli_fetch_assoc($result_query);
-
-                echo '<div style="display:flex"></div><img src="' . $movie['poster'] . '" alt="' . $movie['title'] . '" style="height:200px" ">';
-                echo '<p><strong>Title : </strong>' . $movie['title'] . '</p>';
-                echo '<p><strong>Category : </strong>' . $movie['gender'] . '</p></div>';
-                echo '<p><strong>Synopsis : </strong>' . $movie['synopsis'] . '</p>';
-                echo '<p><strong>Released : </strong>' . $movie['year_released'] . '</p>';
-                echo '<p><strong>Caregory : </strong>' . $movie['gender'] . '</p>';
+                // $movie = mysqli_fetch_assoc($result_query);
+                $movies = mysqli_fetch_all($result_query, MYSQLI_ASSOC);
+                foreach ($movies as $movie) {
+                    echo '<div style="display:flex"></div><img src="' . $movie['poster'] . '" alt="' . $movie['title'] . '" style="height:200px" ">';
+                    echo '<p><strong>Title : </strong>' . $movie['title'] . '</p>';
+                    echo '<p><strong>Category : </strong>' . $movie['gender'] . '</p></div>';
+                    echo '<p><strong>Synopsis : </strong>' . $movie['synopsis'] . '</p>';
+                    echo '<p><strong>Released : </strong>' . $movie['year_released'] . '</p>';
+                    echo '<p><strong>Caregory : </strong>' . $movie['gender'] . '</p>';
+                }
             } else {
                 echo 'DB not found (' . $db_name . ')';
             }
