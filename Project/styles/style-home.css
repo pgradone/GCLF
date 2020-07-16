@@ -36,8 +36,4 @@ main {
     flex-wrap: wrap;
 
 }
-.button {
-    padding: 1rem;
-    float: inline-end;
-    border: 3px solid blue;
-}
+
