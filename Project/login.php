@@ -49,7 +49,7 @@
             if (!is_null($user) && !empty($user)) {
                 if (password_verify($password, $user['password'])) {
                     echo "<p style='color:white; background-color:grey; text-align:center';>Successfully logged in. You will be soon redirected..";
-                    //header('Refresh: 3; url="catalogue.php');
+                    header('Refresh: 3; url="catalogue.php');
                     $_SESSION['email'] = $sanitizeMail;
                     $_SESSION['password'] = $user['password'];
                 } else {
@@ -60,8 +60,8 @@
             }
         }
     }
-
-    var_dump($errors);
+    foreach ($errors as $key => $error) echo "$error";
+    //var_dump($errors);
     ?>
 
     <h2 style="text-align: center;">Please login:</h2><br>
