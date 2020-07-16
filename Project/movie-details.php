@@ -29,9 +29,10 @@ if ($db_found) {
             echo '<strong>Title : </strong>' . $movie['title'] . '<br>';
             echo '<img src="' . $movie['poster'] . '" alt="' . $movie['title'] . '" style="height:200px" ">';
             echo '<p><strong>Synopsis : </strong>' . $movie['synopsis'] . '</p>';
-            echo '<strong>Released : </strong>' . $movie['year_released'] . '';
+            echo '<strong>Released : </strong>' . $movie['year_released'] . ', ';
             echo '<strong>Caregory : </strong>' . $movie['gender'] . '<br>';
-            // get actors for each movie
+            if (isset($movie['imdb_ref']))
+                echo '<p><a href="' . $movie['imdb_ref'] . '">IMDB details</a></p>';
             $sql_query = 'SELECT * FROM act INNER JOIN actors a ON a.actor_id = act.actor_id WHERE act.movie_id = ' . $movie['movie_id'];
             $result_query = mysqli_query($db_handle, $sql_query);
             if ($result_query) {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 15, 2020 at 06:17 PM
+-- Generation Time: Jul 16, 2020 at 11:38 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `gclf`
 --
+CREATE DATABASE IF NOT EXISTS `gclf` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `gclf`;
 
 -- --------------------------------------------------------
 
@@ -41,12 +43,17 @@ CREATE TABLE IF NOT EXISTS `act` (
 --
 
 INSERT INTO `act` (`movie_id`, `actor_id`) VALUES
+(1, 2),
 (4, 2),
 (5, 2),
 (10, 2),
 (2, 3),
 (3, 4),
-(3, 5);
+(6, 4),
+(3, 5),
+(6, 5),
+(7, 5),
+(1, 6);
 
 -- --------------------------------------------------------
 
@@ -61,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `actors` (
   `surname` varchar(100) DEFAULT NULL COMMENT 'family name of actor',
   `portrait` varchar(1000) DEFAULT NULL COMMENT 'url picture of actor',
   PRIMARY KEY (`actor_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `actors`
@@ -70,8 +77,9 @@ CREATE TABLE IF NOT EXISTS `actors` (
 INSERT INTO `actors` (`actor_id`, `first_name`, `surname`, `portrait`) VALUES
 (2, 'Harrison', 'Ford', 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Harrison_Ford_2017.jpg'),
 (3, 'Al', 'Pacino', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Al_Pacino.jpg/220px-Al_Pacino.jpg'),
-(4, 'Laura', 'Betti', 'https://www.google.com/search?sxsrf=ALeKk01X4TFNlnTNeDwm9S-s6BaWNXzy8g:1594809391798&q=Laura+Betti&stick=H4sIAAAAAAAAAONgFuLQz9U3MDcqSlfiBLGMc8vj07SEspOt9NMyc3LBhFVyYnHJI8Y9jNwCL3_cE5baxDhpzclrjKsZubCoE1LhYnPNK8ksqRSS4uKRghuvwSDFxYWwLNsoftelaefYIgUZgOBBaJiDlKaWEBe7Z7FPfnJijmDqBhmGr__f22sJc3GEJFbk5-XnVoKVMjB8sFdS5DTs0HT4C5QXvNnAwCAbH-AgwaHAqMFgGPbt__xf9S4OWgxN-1YcYmPhYBRgsGLSYOJZxMrtk1halKjglFpSkjmBjREA8Yo6ePwAAAA&sa=X&ved=2ahUKEwiF9aD6h8_qAhXoRxUIHY9fDj8Q-BYwNHoECCUQRQ'),
-(5, 'Giorgio', 'Cataldi', 'https://www.google.com/search?sxsrf=ALeKk01X4TFNlnTNeDwm9S-s6BaWNXzy8g:1594809391798&q=Giorgio+Cataldi&stick=H4sIAAAAAAAAAONgFuLQz9U3MDcqSlfiBLGyjUoKc7WEspOt9NMyc3LBhFVyYnHJI8Y9jNwCL3_cE5baxDhpzclrjKsZubCoE1LhYnPNK8ksqRSS4uKRghuvwSDFxYWwLNsoftelaefYIgUZgOBBaJiDlKaWEBe7Z7FPfnJijmDqBhmGr__f22sJc3GEJFbk5-XnVoKVMjB8sFdS5DTs0HT4C5QXvNnAwCAbH-AgwaHAqMFgGPbt__xf9S4OWgxN-1YcYmPhYBRgsGLSYOJZxMrvnplflJ6Zr-CcWJKYk5I5gY0RAHdshKAAAQAA&sa=X&ved=2ahUKEwiF9aD6h8_qAhXoRxUIHY9fDj8Q-BYwLHoECCUQLQ');
+(4, 'Laura', 'Betti', 'https://m.media-amazon.com/images/M/MV5BZTYwNWY0ZGMtZjJkMS00ZTk2LWE1Y2EtMWJhYTAzOWQzM2JkXkEyXkFqcGdeQXVyMTc4MzI2NQ@@._V1_UY317_CR175,0,214,317_AL_.jpg'),
+(5, 'Giorgio', 'Cataldi', 'https://m.media-amazon.com/images/M/MV5BYzUzODZiZTEtY2NiMC00ZTc4LTkwZTEtZmZhZGZmZWIwMTJmXkEyXkFqcGdeQXVyMjUyNDk2ODc@._V1_UY317_CR31,0,214,317_AL_.jpg'),
+(6, 'Laura', 'Dern', 'https://m.media-amazon.com/images/M/MV5BMjI3NzY0MDQxMF5BMl5BanBnXkFtZTcwNzMwMzcyNw@@._V1_UX214_CR0,0,214,317_AL_.jpg');
 
 -- --------------------------------------------------------
 
