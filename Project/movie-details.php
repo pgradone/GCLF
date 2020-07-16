@@ -26,24 +26,28 @@ if ($db_found) {
         // $movie = mysqli_fetch_assoc($result_query);
         $movies = mysqli_fetch_all($result_query, MYSQLI_ASSOC);
         foreach ($movies as $movie) {
-            echo '<div style="display:flex"></div><img src="' . $movie['poster'] . '" alt="' . $movie['title'] . '" style="height:200px" ">';
-            echo '<p><strong>Title : </strong>' . $movie['title'] . '</p>';
-            echo '<p><strong>Category : </strong>' . $movie['gender'] . '</p></div>';
+            echo '<strong>Title : </strong>' . $movie['title'] . '<br>';
+            echo '<img src="' . $movie['poster'] . '" alt="' . $movie['title'] . '" style="height:200px" ">';
             echo '<p><strong>Synopsis : </strong>' . $movie['synopsis'] . '</p>';
-            echo '<p><strong>Released : </strong>' . $movie['year_released'] . '</p>';
-            echo '<p><strong>Caregory : </strong>' . $movie['gender'] . '</p>';
+            echo '<strong>Released : </strong>' . $movie['year_released'] . '';
+            echo '<strong>Caregory : </strong>' . $movie['gender'] . '<br>';
             // get actors for each movie
             $sql_query = 'SELECT * FROM act INNER JOIN actors a ON a.actor_id = act.actor_id WHERE act.movie_id = ' . $movie['movie_id'];
             $result_query = mysqli_query($db_handle, $sql_query);
             if ($result_query) {
+                echo '<p><strong>Actors:</strong><p>';
                 $actors = mysqli_fetch_all($result_query, MYSQLI_ASSOC);
                 foreach ($actors as $actor) {
-                    echo $actor['first_name'] . ' ' . $actor['surnamme'] . '<br>';
+                    echo '<img src="' . $actor['portrait'] . '" alt="' . $actor['first_name'] . ' ' . $actor['surname'] . '" style="height:50px" ">' .
+                     $actor['first_name'] . ' ' . $actor['surname'] . '<br>';
                 }
+            }  else {
+                echo 'wrong query for actors : ' . $sql_query . '<br><hr>';
             }
+            echo '<hr>';
         }
     } else {
-        echo 'wrong query : ' . $sql_query . '<br>';
+        echo 'wrong query for movies : ' . $sql_query . '<br>';
     }
 } else {
     echo 'DB not found (' . $db_name . ')';
