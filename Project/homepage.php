@@ -46,15 +46,30 @@ require_once 'nav.php';
         </form>
 
         <div class="categories">
-            <a href="">adventure</a>
-            <a href="">comedy</a>
-            <a href="">drama</a>
-            <a href="">horror</a>
-            <a href="">Sci-fi</a>
-            <a href="">triller</a>
+            <?php 
+            $db_name = 'gclf';
+            $db_handle = mysqli_connect('localhost', 'root', '', $db_name);
+            $db_found = mysqli_select_db($db_handle, $db_name);
+            
+            if ($db_found) {
+                $sql_query = 'SELECT * FROM categories';
+                $result_query = mysqli_query($db_handle, $sql_query);
+                if ($result_query) {
+                    $categories = mysqli_fetch_all($result_query, MYSQLI_ASSOC);
+                    foreach ($categories as $category) {
+                        echo '<a href="movie-details.php?gender=' . $category['gender'] . '">' . $category['gender'] . '</a>';
+                    }
+                }
+            }
+            
+            ?>
         </div>
 
         <section class="categories">
+            <?php
+
+            ?>
+
             <article>
                 <div id="card">
 
