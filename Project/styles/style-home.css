@@ -25,3 +25,14 @@ main {
     background-color: red;
     padding: 7rem;
 }
+#formContainer {
+    
+    padding: 8rem;
+}
+
+.form {
+    padding: 5rem;
+    border: 1px solid green;
+    background-color: yellow;
+    
+}
