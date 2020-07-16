@@ -11,14 +11,6 @@ require_once 'nav.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style-home.css">
     <title>Home</title>
-    <style>
-        #results {
-            display: none;
-            border: 1px solid black;
-            border-top-width: 0;
-            width: 220px;
-        }
-    </style>
 </head>
 
 <body>
@@ -52,12 +44,15 @@ require_once 'nav.php';
             $db_found = mysqli_select_db($db_handle, $db_name);
             
             if ($db_found) {
-                $sql_query = 'SELECT * FROM categories';
+                //! count the TITLEs for EACH category
+                $sql_query = 'SELECT c.gender, COUNT(m.title) as cg FROM categories c
+                LEFT JOIN movies m ON c.category_id = m.category_id
+                GROUP BY c.gender';
                 $result_query = mysqli_query($db_handle, $sql_query);
                 if ($result_query) {
                     $categories = mysqli_fetch_all($result_query, MYSQLI_ASSOC);
                     foreach ($categories as $category) {
-                        echo '<a href="movie-details.php?gender=' . $category['gender'] . '">' . $category['gender'] . '</a>';
+                        echo '<a href="movie-details.php?gender=' . $category['gender'] . '">' . $category['gender'] . '(' . $category['cg'] . ')</a>';
                     }
                 }
             }
@@ -65,45 +60,35 @@ require_once 'nav.php';
             ?>
         </div>
 
-        <section class="categories">
+        <section class="highlightedmovies">
             <?php
+           $db_name = 'gclf';
+           $db_handle = mysqli_connect('localhost', 'root', '', $db_name);
+           $db_found = mysqli_select_db($db_handle, $db_name);
+           
+           if ($db_found) {
+               $sql_query = 'SELECT * FROM movies';
+               $result_query = mysqli_query($db_handle, $sql_query);
+               if ($result_query) {
+                   $movies = mysqli_fetch_all($result_query, MYSQLI_ASSOC);
+                   foreach ($movies as $movie) {
+                    //    echo '<a href="movie-details.php?gender=' . $category['gender'] . '">' . $category['gender'] . '</a>';
+                        echo '<article>
+                        <div id="card">
+                        <img src="' . $movie['poster'] . '" alt="' . $movie['title'] . '" style="height:200px" ">
+                        <br>
+                        </div>
+                        <h3>
+                            <a href="movie-details.php?movie_id=' . $movie['movie_id'] . '">title</a>
+                        </h3>
+                    </article>';
+                    }
+               }
+           }
 
             ?>
 
-            <article>
-                <div id="card">
-
-                </div>
-                <h3>
-                    <a href="">title</a>
-                </h3>
-            </article>
-
-            <article>
-                <div id="card">
-
-                </div>
-                <h3>
-                    <a href="movie-details.php">title</a>
-                </h3>
-            </article>
-
-            <article>
-                <div id="card">
-
-                </div>
-                <h3>
-                    <a href="">title</a>
-                </h3>
-            </article>
-            <article>
-                <div id="card">
-
-                </div>
-                <h3>
-                    <a href="">title</a>
-                </h3>
-            </article>
+         
         </section>
     </main>
     <script src=" https://code.jquery.com/jquery-3.5.1.min.js"
