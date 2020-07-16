@@ -14,6 +14,7 @@
 
     <?php
     require_once 'nav.php';
+
     $errors = array();
 
     if (isset($_POST['submit'])) {
@@ -26,11 +27,11 @@
 
         // Check inputs
         if (!$sanitizeMail) {
-            $errors['email'] = 'You must enter a valid email address.';
+            $errors['email'] = "<p style=' color:red; text-align:center';>You must enter a valid email.";
         }
 
         if (empty($password)) {
-            $errors['password'] = 'Password is mandatory.';
+            $errors['password'] = "<p style=' color:red; text-align:center';>Password is mandatory.";
         }
 
         if (count($errors) == 0) {
@@ -47,26 +48,27 @@
             // Check if the user exists
             if (!is_null($user) && !empty($user)) {
                 if (password_verify($password, $user['password'])) {
-                    echo 'Successfully Login';
+                    echo "<p style='color:white; background-color:grey; text-align:center';>Successfully logged in. You will be soon redirected..";
+                    header('Refresh: 3; url="catalogue.php');
                     $_SESSION['email'] = $sanitizeMail;
-                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['password'] = $user['password'];
                 } else {
-                    $errors['wrongpassword'] = 'Wrong password.';
+                    $errors['wrongpassword'] = "<p style=' color:red; text-align:center';>Wrong password. Please review.";
                 }
             } else {
-                $errors['mailnotfound'] = 'User with this address email doesnt exists.';
+                $errors['mailnotfound'] = "<p style=' color:red; text-align:center';>This email doesn\'t exist. Please retry.";
             }
         }
     }
-
+    foreach ($errors as $key => $error) echo "$error";
     //var_dump($errors);
     ?>
 
-    <h2>Login to the website</h2>
-    <form action="" method="post">
-        <input type="mail" name="email" placeholder="Email"><br>
-        <input type="password" name="password" placeholder="Password"><br>
-        <input type="submit" name="submit" value="LOGIN">
+    <h2 style="text-align: center;">Please login:</h2><br>
+    <form style="text-align: center;" action="" method="post">
+        <input type="mail" name="email" placeholder="Email"><br><br>
+        <input type="password" name="password" placeholder="Password"><br><br>
+        <input type="submit" name="submit" value="Enter">
     </form>
 </body>
 
