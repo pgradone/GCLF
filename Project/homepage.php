@@ -11,6 +11,14 @@ require_once 'nav.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style-home.css">
     <title>Home</title>
+    <style>
+        #results {
+            display: none;
+            border: 1px solid black;
+            border-top-width: 0;
+            width: 220px;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,6 +42,7 @@ require_once 'nav.php';
         <form action="" method="post">
             <input type="search" name="search" id="mysearch">
             <input type="submit" name="submit" value="Search a Movie">
+            <div id="results"></div>
         </form>
 
         <div class="categories">
