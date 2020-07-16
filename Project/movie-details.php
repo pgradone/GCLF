@@ -33,6 +33,7 @@
                     echo '<p><strong>Synopsis : </strong>' . $movie['synopsis'] . '</p>';
                     echo '<p><strong>Released : </strong>' . $movie['year_released'] . '</p>';
                     echo '<p><strong>Caregory : </strong>' . $movie['gender'] . '</p>';
+                    echo '<hr>';
                 }
             } else {
                 echo 'wrong query : ' . $sql_query . '<br>';
