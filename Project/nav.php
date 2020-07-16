@@ -13,7 +13,7 @@
     <nav class="topnav">
         <a class="active" href="homepage.php">Home</a>
         <a href="#categories">Categories</a>
-        <a href="#catalogue">Catalogue</a>
+        <a href="catalogue.php">Catalogue</a>
         <a href="#addmovie">Add Movie</a>
 
         <div class="search-container">
