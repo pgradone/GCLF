@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    <?php require_once 'nav.php';?>
+    <?php require_once 'nav.php'; ?>
     <section id="formContainer">
         <input type="text" class="form">
-        <input type="submit" class="button" value="Validate">
+        <input type="button" class="button" value="Validate">
 
     </section>
 </body>
