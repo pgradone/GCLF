@@ -57,7 +57,7 @@ require_once 'nav.php';
 
                 </div>
                 <h3>
-                    <a href="">title</a>
+                    <a href="movie-details.php">title</a>
                 </h3>
             </article>
 
