@@ -22,7 +22,7 @@
 
     // change last part of the query
 
-    $query = 'SELECT * FROM movies ORDER BY year_released' . $order;
+    $query = 'SELECT * FROM movies ORDER BY year_released ' . $order;
 
     $results = mysqli_query($conn, $query);
     $movies = mysqli_fetch_all($results, MYSQLI_ASSOC);
