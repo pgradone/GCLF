@@ -20,7 +20,9 @@ if ($db_found) {
     $criteria = !empty($_GET) ? 'WHERE ' . key($_GET) . ' LIKE \'%' . $_GET[key($_GET)] . '%\'' : '';
     // build query text with criteria, if any
     $sql_query = 'SELECT m.*, c.gender FROM movies m
-                LEFT JOIN categories c ON c.category_id = m.category_id ' . $criteria;
+                LEFT JOIN categories c ON c.category_id = m.category_id '
+<<<<<<< HEAD
+        . $criteria;
     $result_query = mysqli_query($db_handle, $sql_query);
     if ($result_query) {
         // $movie = mysqli_fetch_assoc($result_query);
@@ -32,8 +34,6 @@ if ($db_found) {
             echo '<p><strong>Synopsis : </strong>' . $movie['synopsis'] . '</p>';
             echo '<p><strong>Released : </strong>' . $movie['year_released'] . '</p>';
             echo '<p><strong>Caregory : </strong>' . $movie['gender'] . '</p>';
-<<<<<<< HEAD
-=======
 =======
                 . $criteria;
             $result_query = mysqli_query($db_handle, $sql_query);
@@ -64,7 +64,6 @@ if ($db_found) {
         } else {
             echo 'DB not found (' . $db_name . ')';
 >>>>>>> 8c99d73efe76c23820663498ba3048ec0dbc7c36
->>>>>>> 789b807397b38442b585be9cb6abc6cbcbaf0a67
         }
     } else {
         echo 'wrong query : ' . $sql_query . '<br>';
