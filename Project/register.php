@@ -76,8 +76,8 @@
 
                 // Check if the user was successfully registered
                 if ($result_query) {
-                    echo 'Successfully registered. You can now login.<br>';
-                    echo '<a href="login.php">Login</a>';
+                    echo "<p style='color:white; background-color:grey; text-align:center';>Successfully registered. You can now login.<br>";
+                    header('Refresh: 5; url="login.php');
                 } else {
                     echo 'Something went wrong... Try again.';
                 }
@@ -89,7 +89,7 @@
     }
 
     foreach ($errors as $key => $error) {
-        echo "Error($key) : $error<br>";
+        echo "<p style='color:white; background-color:grey; text-align:center';>Error($key) : $error<br>";
     }
 
     ?>
@@ -97,7 +97,7 @@
 
     <h1>Register to the website</h1>
     <br>
-    <form action="" method="post">
+    <form class="register" action="" method="post" style="text-align: center">
         <input type="text" name="firstname" placeholder="First Name" value="<?= $firstname; ?>"><br>
         <input type="text" name="lastname" placeholder="Last Name" value="<?= $lastname; ?>"><br>
         <input type="text" name="mail" placeholder="Email" value="<?= $mail; ?>"><br>
