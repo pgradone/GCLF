@@ -14,6 +14,8 @@ require_once 'nav.php';
 
 <body>
     <main>
+        <h2>Welcome to our movie homepage</h2>
+
         <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus illo, tempora sit consequatur dolorem
             dignissimos accusantium voluptatum corrupti obcaecati sapiente in laborum delectus animi minus natus, ad
@@ -30,7 +32,7 @@ require_once 'nav.php';
 
         <form action="" method="post">
             <input type="search" name="search" id="mysearch">
-            <input type="submit" name="submit" value="search movie">
+            <input type="submit" name="submit" value="Search a Movie">
         </form>
 
         <div class="categories">
@@ -80,33 +82,33 @@ require_once 'nav.php';
         </section>
     </main>
     <script>
-    $(function() {
-        $('#mysearch').keyup(function(e) {
-            e.preventDefault();
-            $.ajax({
-                url: 'homepage.php',
-                type: 'post',
-                dataType: "html",
-                data: {
-                    mySearch: $(this).val()
-                },
-                success: function(result) {
-                    console.log(result);
-                    $('#results').show();
-                    $('#results').html(result);
-                    $("#results").css("background", "#FFF");
-                },
-                error: function(err) {
-                    // IF AJAX ERROR HAPPENED
-                }
+        $(function() {
+            $('#mysearch').keyup(function(e) {
+                e.preventDefault();
+                $.ajax({
+                    url: 'homepage.php',
+                    type: 'post',
+                    dataType: "html",
+                    data: {
+                        mySearch: $(this).val()
+                    },
+                    success: function(result) {
+                        console.log(result);
+                        $('#results').show();
+                        $('#results').html(result);
+                        $("#results").css("background", "#FFF");
+                    },
+                    error: function(err) {
+                        // IF AJAX ERROR HAPPENED
+                    }
+                });
             });
         });
-    });
 
-    function selectCountry(val) {
-        $("#mysearch").val(val);
-        $("#results").hide();
-    }
+        function selectCountry(val) {
+            $("#mysearch").val(val);
+            $("#results").hide();
+        }
     </script>
 
 </body>
