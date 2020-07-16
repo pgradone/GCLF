@@ -12,9 +12,9 @@
 <body>
     <nav class="topnav">
         <a class="active" href="homepage.php">Home</a>
-        <a href="form1.php">Form</a>
+        <a href="form.php">Form</a>
         <a href="catalogue.php">Catalog</a>
-        <a href="form2.php">Add Movie</a>
+        <a href="add-movie.php">Add Movie</a>
 
         <div class="search-container">
             <a href="register.php">Register</a>
