@@ -1,4 +1,17 @@
 .sub-nav {
     display: flex;
     justify-content: space-evenly;
+    background-color: grey;
+}
+
+.sub-nav-title, h5 {
+    background-color: lightblue;
+    margin: 0px;
+    height: 5rem;
+    padding: ;
+    
+}
+.sub-nav-title {
+
+    
 }

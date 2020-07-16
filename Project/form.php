@@ -14,6 +14,7 @@
         <h2>Catalog</h2>
         <input type="text" name="" placeholder="dropdown menu selection">
     </div>
+    <hr>
 
 
     <section id="formContainer">
