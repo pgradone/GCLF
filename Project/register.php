@@ -30,18 +30,18 @@
 
         // Check inputs
         if (!$sanitizeMail) {
-            $errors['mail'] = 'You must enter a valid email address.';
+            $errors['mail'] = "<p style=' color:red; text-align:center';>You must enter a valid email address.";
         }
 
         if (empty($firstname)) {
-            $errors['firstname'] = 'firstname is mandatory.';
+            $errors['firstname'] = "<p style=' color:red; text-align:center';>First name is mandatory.";
         }
         if (empty($lastname)) {
-            $errors['lastname'] = 'lastname is mandatory.';
+            $errors['lastname'] = "<p style=' color:red; text-align:center';>Last name is mandatory.";
         }
 
         if (empty($password)) {
-            $errors['password'] = 'Password is mandatory.';
+            $errors['password'] = "<p style=' color:red; text-align:center';>Password is mandatory.";
         }
 
         // If there is no errors, insert user into DB
@@ -79,7 +79,7 @@
                     echo "<p style='color:white; background-color:grey; text-align:center';>Successfully registered. You can now login.<br>";
                     header('Refresh: 5; url="login.php');
                 } else {
-                    echo 'Something went wrong... Try again.';
+                    echo "<style='color:red; text-align:center'>Something went wrong... Try again.";
                 }
 
                 // Close connection
@@ -88,20 +88,17 @@
         }
     }
 
-    foreach ($errors as $key => $error) {
-        echo "<p style='color:white; background-color:grey; text-align:center';>Error($key) : $error<br>";
-    }
+    foreach ($errors as $key => $error) echo "$error";
 
     ?>
 
 
-    <h1>Register to the website</h1>
-    <br>
+    <h1 style="text-align:center"> Register to the website</h1> <br>
     <form class="register" action="" method="post" style="text-align: center">
-        <input type="text" name="firstname" placeholder="First Name" value="<?= $firstname; ?>"><br>
-        <input type="text" name="lastname" placeholder="Last Name" value="<?= $lastname; ?>"><br>
-        <input type="text" name="mail" placeholder="Email" value="<?= $mail; ?>"><br>
-        <input type="password" name="password" placeholder="Password"><br>
+        <input type="text" name="firstname" placeholder="First Name" value="<?= $firstname; ?>"><br><br>
+        <input type="text" name="lastname" placeholder="Last Name" value="<?= $lastname; ?>"><br><br>
+        <input type="text" name="mail" placeholder="Email" value="<?= $mail; ?>"><br><br>
+        <input type="password" name="password" placeholder="Password"><br><br>
         <input type="submit" name="submit" value="Register">
     </form>
 </body>
