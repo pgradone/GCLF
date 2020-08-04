@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 16, 2020 at 12:13 PM
+-- Generation Time: Aug 01, 2020 at 01:54 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `gclf`
 --
-CREATE DATABASE IF NOT EXISTS `gclf` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `gclf`;
 
 -- --------------------------------------------------------
 
@@ -140,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `movies` (
   PRIMARY KEY (`movie_id`),
   UNIQUE KEY `UK_title` (`movie_id`),
   KEY `FK_movies_category` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `movies`
@@ -156,7 +154,8 @@ INSERT INTO `movies` (`movie_id`, `title`, `year_released`, `synopsis`, `poster`
 (7, 'Oedipus Rex', 1967, 'Rescued from abandonment and raised by the King and Queen, Oedipus is still haunted by a prophecy--he\'ll murder his father and marry his mother.', 'https://www.gstatic.com/tv/thumb/v22vodart/31308/p31308_v_v8_aa.jpg', 4, 'https://www.imdb.com/title/tt0061613/?ref_=nv_sr_srsg_0'),
 (8, 'The Real Thing', 2002, 'Rupert is a small time crook trying to do the right thing. But when his younger brother gets in trouble and needs a new liver, Rupert gets together his old gang and they plan a heist on New Years Eve.', 'https://m.media-amazon.com/images/M/MV5BMTc4NjcxMjczMF5BMl5BanBnXkFtZTcwMjg0MDcyMQ@@._V1_UX182_CR0,0,182,268_AL_.jpg', 4, 'https://www.imdb.com/title/tt0377701/?ref_=nv_sr_srsg_0'),
 (9, 'Something Fishy', 1994, 'Maxime is the best detective of a French agency. She is always very busy driving many investigations at one time. She divorced 15 years before, when she got the job. During an investigation she finds her son, who had not seen since he was a baby, so she begins to have memories of her past life that she belived forgotten. Another investigation leads her to discover dirty bussiness of her ex-husband.', 'https://m.media-amazon.com/images/M/MV5BMWI3ZjAwMjEtNmU1Zi00MDU4LTk5M2QtNWViMjRiMGVhYjg1XkEyXkFqcGdeQXVyNTY1MDY1NjY@._V1_SY1000_CR0,0,734,1000_AL_.jpg', 6, 'https://www.imdb.com/title/tt0110784/?ref_=nv_sr_srsg_0'),
-(10, 'Raiders of the Lost Ark', 1981, 'Spring 1936. In the thick jungle of the South American continent, a renowned archeologist and expert on the occult is studying fragments of a map, when one of his exploration party pulls a gun. The archeologist pulls out a bullwhip and with such disarms the turncoat, sending him running - thus does Dr. Henry \"Indiana\" Jones stay alive. He and a guide enter a dank and oppressively vast cave that contains several traps created by the ancient race which hid inside a famous handheld statue; Indy barely escapes such traps but is cornered by native tribesmen served by Belloq, an old enemy who arrogantly makes off with the statue, while Indy must flee for his life and escape on a friend\'s seaplane. Back in the US two agents from US Army intelligence tell him of Nazi German activities in archeology, including a gigantic excavation site in Egypt - a site that an intercepted cable indicates to Indy is the location of the Ark of the Covenant, the powerful chest bearing the Ten Commandments, that the Nazis can use to obliterate any enemy. Indy must recruit a former girlfriend (the daughter of his old professor) and an old chum in Cairo to infiltrate the Nazi site and make off with the Ark, but along the way Indy gets involved in a series of fights, chases, and traps, before the Nazis learn the full power of the Ark.', 'https://m.media-amazon.com/images/M/MV5BMjA0ODEzMTc1Nl5BMl5BanBnXkFtZTcwODM2MjAxNA@@._V1_UY1200_CR84,0,630,1200_AL_.jpg', 3, 'https://www.imdb.com/title/tt0082971/?ref_=nv_sr_srsg_0');
+(10, 'Raiders of the Lost Ark', 1981, 'Spring 1936. In the thick jungle of the South American continent, a renowned archeologist and expert on the occult is studying fragments of a map, when one of his exploration party pulls a gun. The archeologist pulls out a bullwhip and with such disarms the turncoat, sending him running - thus does Dr. Henry \"Indiana\" Jones stay alive. He and a guide enter a dank and oppressively vast cave that contains several traps created by the ancient race which hid inside a famous handheld statue; Indy barely escapes such traps but is cornered by native tribesmen served by Belloq, an old enemy who arrogantly makes off with the statue, while Indy must flee for his life and escape on a friend\'s seaplane. Back in the US two agents from US Army intelligence tell him of Nazi German activities in archeology, including a gigantic excavation site in Egypt - a site that an intercepted cable indicates to Indy is the location of the Ark of the Covenant, the powerful chest bearing the Ten Commandments, that the Nazis can use to obliterate any enemy. Indy must recruit a former girlfriend (the daughter of his old professor) and an old chum in Cairo to infiltrate the Nazi site and make off with the Ark, but along the way Indy gets involved in a series of fights, chases, and traps, before the Nazis learn the full power of the Ark.', 'https://m.media-amazon.com/images/M/MV5BMjA0ODEzMTc1Nl5BMl5BanBnXkFtZTcwODM2MjAxNA@@._V1_UY1200_CR84,0,630,1200_AL_.jpg', 3, 'https://www.imdb.com/title/tt0082971/?ref_=nv_sr_srsg_0'),
+(24, 'The Shawshank Redemption', 1994, 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.', 'https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg', 5, 'https://www.imdb.com/title/tt0111161/?ref_=ttmi_tt');
 
 -- --------------------------------------------------------
 
